@@ -1,0 +1,42 @@
+1. Análisis de estadísticas de Pokémon ME INTERESA
+
+Un enfoque interesante podría ser analizar las estadísticas de los Pokémon y cómo se relacionan entre sí. Podrías utilizar un dataset que contenga información sobre las estadísticas base de todos los Pokémon, su tipo, habilidades, y otros atributos como la generación a la que pertenecen. Podrías utilizar técnicas de clustering para agrupar a los Pokémon por similitud en sus estadísticas y/o tipo. También podrías analizar si existen ciertos tipos o combinaciones de tipos que tienen una ventaja significativa sobre otros tipos.
+
+
+2. Predicción de resultados de batallas Pokémon NO LO VEO CLARO
+
+Otro proyecto interesante podría ser utilizar un dataset de registros de batallas Pokémon, para entrenar un modelo de Machine Learning que pueda predecir el resultado de una batalla entre dos Pokémon dados. Podrías utilizar técnicas de clasificación para esto, y tal vez agregar variables adicionales como la habilidad del entrenador o el escenario de la batalla para mejorar la precisión del modelo.
+
+
+3. Análisis de Pokémon Go NO LO VEO CLARO
+
+Si prefieres centrarte en Pokémon Go, una idea podría ser utilizar la API de Pokémon Go para extraer información sobre las estadísticas y ubicaciones de los Pokémon capturados por los jugadores. Podrías analizar patrones en la distribución de ciertos tipos de Pokémon en diferentes áreas geográficas, o crear un modelo que prediga la probabilidad de encontrar un Pokémon específico en una ubicación determinada.
+
+Para trabajar con la API de Pokémon Go, puedes buscar bibliotecas en tu lenguaje de programación preferido que te permitan realizar solicitudes a la API. Con la API de Pokémon Go, puedes acceder a información sobre los Pokémon capturados por un jugador, así como también información sobre Pokestops y Gimnasios.
+
+
+4. Análisis de popularidad de Pokémon ME INTERESA (siempre y cuando exista algún dataset)
+
+Podrías utilizar un dataset que contenga información sobre las preferencias de los jugadores en cuanto a los Pokémon, como por ejemplo, las clasificaciones de popularidad que se realizan en diversos sitios web de fans de Pokémon. Podrías analizar las tendencias de popularidad de ciertos Pokémon a lo largo del tiempo, o comparar la popularidad de diferentes generaciones de Pokémon.
+
+
+5. Análisis de mercado de cartas de Pokémon ME INTERESA
+
+Podrías utilizar un dataset que contenga información sobre los precios de las cartas de Pokémon, como los precios de venta en línea y en tiendas, para analizar las tendencias en los precios de las cartas. Podrías determinar qué cartas son las más populares y cuáles son las más valiosas en términos de precio, y examinar qué factores influyen en el precio de las cartas, como la rareza, la edad, la popularidad de los personajes y la demanda de los jugadores.
+
+
+6. Análisis de la dificultad del juego a través de las generaciones NO LO VEO CLARO
+
+Podrías utilizar un dataset que contenga información sobre la dificultad de los diferentes juegos de Pokémon, tal vez utilizando puntuaciones o comentarios de jugadores en sitios web de reseñas de juegos. Luego, podrías analizar la dificultad de cada juego en relación a las otras entregas de la saga, y determinar si hay una tendencia hacia un aumento o disminución de la dificultad a lo largo del tiempo. También podrías comparar la dificultad de los juegos dentro de cada generación, y examinar qué factores contribuyen a la dificultad percibida de los juegos.
+
+
+7. Análisis de la utilización de Pokémon a través de las generaciones ME INTERESA
+
+Podrías utilizar un dataset que contenga información sobre los equipos de Pokémon que los jugadores utilizan en cada juego de la saga. Podrías analizar las tendencias de uso de diferentes Pokémon a lo largo de las diferentes generaciones, y determinar qué Pokémon son los más populares en cada generación. También podrías examinar qué factores influyen en la popularidad de un Pokémon, como su tipo, habilidades, estadísticas, y apariencia, y cómo estos factores han cambiado a lo largo del tiempo.
+
+
+8. Análisis de estrategias de crianza y competitivo NO LO VEO CLARO
+
+Podrías utilizar un dataset que contenga información sobre las estrategias de crianza y competitivo utilizadas por los jugadores en los juegos de la saga principal. Podrías analizar las tendencias en las estrategias utilizadas, como los Pokémon más populares y las técnicas de crianza más efectivas, y determinar qué factores influyen en el éxito de estas estrategias, como las habilidades de los jugadores y la selección de Pokémon y movimientos.
+
+9. Camino de Santiago para principiantes
