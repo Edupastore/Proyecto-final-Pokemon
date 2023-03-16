@@ -36,7 +36,7 @@ La motivación para la realización de este proyecto viene determinada por varia
 - Alcance: Pokémon es, a nivel mundial, la franquicia de medios más valiosa del mundo en términos de ingresos totales (según Statista, un portal alemán de estadística), por lo que la magnitud de este fenómeno invita a estudiarlo a fondo.
 <br>
 
-<center>![pokevaluable](https://github.com/Edupastore/Proyecto-final-Pokemon/blob/main/images/pokevaluable.jpg)</center>
+![pokevaluable](https://github.com/Edupastore/Proyecto-final-Pokemon/blob/main/images/pokevaluable.jpg)
 
 
 <a name="extracción"/>
@@ -50,7 +50,7 @@ Los métodos utilizados para acceder, extraer y, finalmente, almacenar estos dat
 - Web scraping: hemos extraído datos de diversas páginas que nos han ayudado a configurar nuestro conjunto de datos.
 - Llamadas a la PokéAPI: la API principal de Pokémon; de aquí también hemos sacado información bastante valiosa para nuestro posterior estudio.
 
-A continuación, vamos a citar todas las fuentes de las que hemos extraído datos y a detallar qué información hemos sacado de cada una.
+A continuación, vamos a citar todas las fuentes de las que hemos extraído datos y a detallar qué información hemos sacado de cada una de ellas:
 
 <details>
 <summary>Dataset de los primeros 898 Pokémon (gen. I a VIII)</summary>
@@ -118,7 +118,7 @@ Toda esta parte de extracción y la posterior de transformación, las hemos llev
 ## 🧬 Transformación
 
 El proceso de transformación ha sido uno de los pasos más densos de este proyecto. Para no extendernos mucho, indicaremos a continuación las líneas generales sobre las transformaciones que hemos ido implementando conforme íbamos recopilando la información:
-<br>
+
 - Hemos limpiado los datos conforme los hemos ido obteniendo siguiendo una serie de pasos para ello. Hemos llevado a cabo la eliminación de registros que no nos hacían falta, hemos comprobado valores nulos y los hemos rellenado cuando ha sido oportuno y hemos comprobado que no hubiese registros duplicados.
 
 - También hemos tratado de homogeneizar los datos de algunas columnas para que todo tuviese un sentido, una coherencia y de cara a facilitar el análisis posterior de los datos.
@@ -138,9 +138,9 @@ Los datos resultantes se han exportado a un fichero con extensión csv bajo el n
 ## 🔎 Objetivo
 
 Una vez configurado el conjunto de datos a nuestra medida, hemos pasado a realizar un estudio con el objetivo de ver si existen diferencias significativas entre las distintas generaciones Pokémon y, de haberlas, tratar de encontrar los pares de generaciones entre los que las hay.
-<br>
+
 Este objetivo, ha sido posible llevarlo a cabo gracias a diversas técnicas estadísticas (fundamentalmente tests) que veremos con más profundidad en el siguiente apartado.
-<br>
+
 Por último, cabe comentar que hemos llevado a cabo este análisis sobre si existen diferencias significativas estudiando todas las variables de nuestro conjunto de datos (tanto las numéricas como las categóricas).
 
 <a name="estudio"/>
