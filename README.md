@@ -169,7 +169,17 @@ La prueba post-hoc que hemos utilizado es la siguiente:
 
 El procedimiento que hemos llevado a cabo para el estudio de cada variable entre las distintas generaciones Pokémon para ver si existían diferencias significativas ha sido el siguiente:
 
+1º. Hemos pasado los tests para verificar si se cumplen o no los supuestos de normalidad, homocedasticidad e independencia de muestras para saber si pasar posteriormente prueba de ANOVA o Kruskal-Wallis.
 
+2º. Para el test de normalidad (Shapiro), en el caso de que alguno de los p-valor haya sido menor que el nivel de significatividad (0.05, ya que asumimos un nivel de confianza del 95%), entonces hemos rechazado la hipótesis nula de que los datos siguen una distribución normal.
+
+3º Si los otros dos supuestos sí se han cumplido, hemos normalizado los datos (a pesar de que, en ocasiones, puede ser contraproducente) y hemos pasado test de Anova.
+
+4º Si uno de los otros dos supuestos o ninguno de los dos se ha cumplido, hemos pasado la prueba de Kruskal-Wallis.
+
+5º Para las variables categóricas hemos llevado a cabo una codificación numérica en primera instancia y luego hemos pasado ANOVA si se cumplía el supuesto de independencia de muestras (los otros dos no eran necesarios con este tipo de variables) o Kruskal-Wallis si no se cumplía dicho supuesto.
+
+6º Por último, si al pasar bien el test de ANOVA, bien el de Kruskal-Wallis, hemos recibido como respuesta que hay evidencia significativa para rechazar la hipótesis nula de que las muestras tienen la misma media/mediana poblacional, hemos pasado la prueba de Tukey para ver entre qué pares de muestras existen diferencias significativas en cuanto a la variable que le hayamos pasado a los diferentes tests.
 
 Todo lo que hemos ido analizando en este estudio, se ha llevado a cabo en un Jupyter Notebook llamado "Estudio.ipynb" (alojado en la carpeta src del repositorio).
 
@@ -177,13 +187,23 @@ Todo lo que hemos ido analizando en este estudio, se ha llevado a cabo en un Jup
 
 ## 🤓 Conclusiones
 
+Las conclusiones a las que hemos llegado tras la realización de este estudio estadístico son:
 
-<br>
+- Por un lado, que las variables numéricas correspondientes a las estadísticas de los Pokémon, al rol competitivo potencial de cada Pokémon (ANOVA) y a los datos de altura y peso (Kruskal-Wallis) siguen una distribución similar entre generaciones, ya que no podemos rechazar la hipótesis nula de que las muestras tienen la misma media/mediana poblacional. Podemos decir en este sentido, por ejemplo, que no se han potenciado ni "nerfeado" en términos medios las estadísticas de los Pokémon con el paso de las generaciones.
+
+- Para las variables categóricas category y color (Kruskal-Wallis), tampoco podemos rechazar la hipótesis nula de que las muestras tienen la misma mediana poblacional, por lo que podemos intuir que las proporciones de tipos de Pokémon en cuanto a si son normales, legendarios, fósiles, etcétera, entre generaciones, responden a cierta similitud.
+
+- Por otro lado, las variables numéricas hatch, capt_rate, base_happ y base_exp, y las variables categóricas growth_rate, type1, type2, gender, egg_gr1 y egg_gr22 (Kruskal-Wallis) nos muestran que existen diferencias significativas entre diferentes pares de generaciones. Habría que hacer un estudio más a fondo para ver a qué se deben estas diferencias.
 
 
 <a name="siguientespasos"/>
 
 ## 👣 Siguientes pasos
 
+Con intención de potenciar el proyecto y dotarlo de mayor información, los próximos pasos a seguir podrían ser los siguientes:
 
-<br>
+- Efectuar un análisis estadístico aún más riguroso y exhaustivo que el ya realizado para ver si se puede extraer información más específica sobre esas diferencias significativas entre muestras (generaciones) que hemos obtenido en el estudio actual.
+
+- Recopilación de datos que nos proporcionen información más detallada sobre cada Pokémon (fortalezas, debilidades, habilidades, ataques que puede aprender, objetos que se le pueden equipar, puntos de esfuerzo (EV's) que proporciona al derrotarlo, juegos de la saga principal en los que aparece y un largo etcétera). Esto puede llevarse a cabo a través de la PokéAPI y del scrapeo de diferentes sitios Web.
+
+- De forma paralela, sería interesante llamar a la API de Pokémon Go y extraer todos los datos relevantes de la aplicación para elaborar una tabla maestra que nos pueda ser de utilidad en un futuro (por ejemplo, para saber a golpe de click qué Pokémon son los mejores para acometer una incursión contra cierto legendario).
