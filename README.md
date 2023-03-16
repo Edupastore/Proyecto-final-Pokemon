@@ -11,7 +11,7 @@
 5.[🔎 Objetivo](#objetivo)\
 6.[📊 Estudio](#estudio)\
 7.[🤓 Conclusiones](#conclusiones)\
-8.[👣 Siguientes pasos](#siguientespasos)\
+8.[👣 Siguientes pasos](#siguientespasos)
 
 ## ✍️ Descripción
 
@@ -79,9 +79,9 @@ Este portal nos ha brindado la siguiente información: número de la Pokédex na
 <summary>Web scraping del portal pokemondb.net</summary>
 <br>
 El enlace a la mencionada página es el siguiente: https://pokemondb.net/pokedex/national#gen-9
-<br>
+
 En esta Web, hemos tratado de completar la información faltante sobre los Pokémon de Hisui y Paldea que mencionábamos en el epígrafe anterior.
-<br>
+
 Para ello, hemos vuelto a emplear Selenium y hemos extraído la información sobre los tipos de cada Pokémon. El resto de información faltante, la hemos calculado o la hemos rellenado de la forma más oportuna.
 </details>
 
@@ -120,17 +120,17 @@ Toda esta parte de extracción y la posterior de transformación, las hemos llev
 El proceso de transformación ha sido uno de los pasos más densos de este proyecto. Para no extendernos mucho, indicaremos a continuación las líneas generales sobre las transformaciones que hemos ido implementando conforme íbamos recopilando la información:
 <br>
 - Hemos limpiado los datos conforme los hemos ido obteniendo siguiendo una serie de pasos para ello. Hemos llevado a cabo la eliminación de registros que no nos hacían falta, hemos comprobado valores nulos y los hemos rellenado cuando ha sido oportuno y hemos comprobado que no hubiese registros duplicados.
-<br>
+
 - También hemos tratado de homogeneizar los datos de algunas columnas para que todo tuviese un sentido, una coherencia y de cara a facilitar el análisis posterior de los datos.
-<br>
+
 - No hemos analizado si había datos atípicos, porque todos los datos de nuestro conjunto (Pokémon) tienen sentido para permanecer en el dataset. Tampoco hemos comprobado correlaciones ni colinealidad en este apartado porque no nos ha interesado; las columnas se han elegido con total discrecionalidad y sin importar si eran dependientes unas de otras.
-<br>
+
 - Hemos creado nuevas variables (columnas) que son combinación lineal de otras columnas o transformaciones de las mismas. También hemos eliminado columnas que no nos servían para el estudio y añadido otras.
-<br>
+
 - Además, hemos comprobado que los tipos de datos de nuestro primer dataset (generaciones I a VIII) y del segundo (generación IX) fuesen iguales y hemos optimizado dichos tipos para que ocupasen lo mínimo posible en memoria.
-<br>
+
 - Para finalizar, hemos concatenado ambos conjuntos de datos para conformar un registro único con información relevante sobre todos los Pokémon existentes a fecha actual (16/03/2023) y para un posterior análisis estadístico que veremos en los próximos epígrafes.
-<br>
+
 Los datos resultantes se han exportado a un fichero con extensión csv bajo el nombre de "pokefinal.csv" (alojado en la carpeta data del repositorio).
 
 <a name="objetivo"/>
