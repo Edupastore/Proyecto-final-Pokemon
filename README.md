@@ -8,10 +8,10 @@
 2.[✌️ Motivación](#motivación)\
 3.[📈 Extracción de datos](#extracción)\
 4.[🧬 Transformación](#transformación)\
-5.[🔎 Objetivo](#objetivo)
-6.[📊 Estudio](#estudio)
-7.[🤓 Conclusiones](#conclusiones)
-8.[👣 Siguientes pasos](#siguientespasos)
+5.[🔎 Objetivo](#objetivo)\
+6.[📊 Estudio](#estudio)\
+7.[🤓 Conclusiones](#conclusiones)\
+8.[👣 Siguientes pasos](#siguientespasos)\
 
 ## ✍️ Descripción
 
