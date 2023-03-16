@@ -36,7 +36,7 @@ La motivación para la realización de este proyecto viene determinada por varia
 - Alcance: Pokémon es, a nivel mundial, la franquicia de medios más valiosa del mundo en términos de ingresos totales (según Statista, un portal alemán de estadística), por lo que la magnitud de este fenómeno invita a estudiarlo a fondo.
 <br>
 
-![pokevaluable](https://github.com/Edupastore/Proyecto-final-Pokemon/blob/main/images/pokevaluable.jpg)
+<center>![pokevaluable](https://github.com/Edupastore/Proyecto-final-Pokemon/blob/main/images/pokevaluable.jpg)</center>
 
 
 <a name="extracción"/>
@@ -55,29 +55,29 @@ A continuación, vamos a citar todas las fuentes de las que hemos extraído dato
 <details>
 <summary>Dataset de los primeros 898 Pokémon (gen. I a VIII)</summary>
 
-<br>
+
 El enlace al mencionado dataset es el siguiente: https://data.world/data-society/pokemon-with-stats
-<br>
+
 De este archivo csv hemos extraído valiosa información sobre los Pokémon que van desde la primera generación a la octava (correspondientes a las regiones de Kanto, Johto, Hoenn, Sinnoh, Teselia, Kalos, Alola y Galar).
-<br>
+
 EL fichero nos ha brindado la siguiente información: número de la Pokédex nacional, nombre del Pokémon, tipo 1, tipo 2, suma del total de las estadísticas, nivel de salud, ataque, defensa, ataque especial, defensa especial, velocidad, generación y si es legendario o no el Pokémon.
 </details>
 
 <details>
 <summary>Web scraping del portal serebii.net</summary>
-<br>
+
 El enlace a la mencionada Web es el siguiente: https://www.serebii.net/pokemon/all.shtml
-<br>
+
 De esta página hemos tratado de extraer la misma información que arriba, pero de los Pokémon correspondientes a la novena generación, incluidos los dos últimos Pokémon anunciados recientemente (finales de febrero de 2023: Walking Wake y Iron Leaves).
-<br>
+
 A través del web-scraping y, mediante Selenium, hemos extraído parte de esa información sobre Pokémon de las regiones de Hisui (octava generación) y de Paldea (novena generación).
-<br>
+
 Este portal nos ha brindado la siguiente información: número de la Pokédex nacional, nombre del Pokémon, nivel de salud, ataque, defensa, ataque especial, defensa especial y velocidad.
 </details>
 
 <details>
 <summary>Web scraping del portal pokemondb.net</summary>
-<br>
+
 El enlace a la mencionada página es el siguiente: https://pokemondb.net/pokedex/national#gen-9
 
 En esta Web, hemos tratado de completar la información faltante sobre los Pokémon de Hisui y Paldea que mencionábamos en el epígrafe anterior.
@@ -87,27 +87,27 @@ Para ello, hemos vuelto a emplear Selenium y hemos extraído la información sob
 
 <details>
 <summary>Web scraping del portal wikidex.net</summary>
-<br>
+
 El enlace a la mencionada página es el siguiente: https://www.wikidex.net/wiki/Lista_de_Pok%C3%A9mon_con_los_puntos_de_esfuerzo_que_dan_en_combate
-<br>
+
 De esta Web, hemos extraído datos sobre la experiencia base de cada Pokémon. Para sacar la información de los dos últimos Pokémon, hemos recurrido a otra página que contuviera esa información y hemos metido "a mano" esos datos. Una vez más, hemos vuelto a emplear Selenium para ello.
 </details>
 
 <details>
 <summary>Web scraping del portal bulbapedia.bulbagarden.net/</summary>
-<br>
+
 El enlace a la mencionada página es el siguiente: https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Egg_Group
-<br>
+
 De aquí, hemos extraído información sobre los grupos huevo de cada Pokémon (información importante para la crianza de Pokémon). Mediante el empleo de Selenium, hemos sacado los datos del grupo huevo 1 y del grupo huevo 2 de todos los Pokémon.
 </details>
 
 <details>
 <summary>PokéAPI: pokeapi.co</summary>
-<br>
+
 El enlace a la mencionada API es el siguiente: https://pokeapi.co/
-<br>
+
 Esta herramienta, nos brinda muchísima información acerca del mundo Pokémon. Cabe comentar, que en algunos casos la información que intentábamos extraer no estaba completa y que sólo estaba disponible hasta una determinada generación. En algunos casos, hemos podido subsanar esta situación, pero en otros no, descartando incorporar esa información a nuestro conjunto de datos.
-<br>
+
 Los datos extraídos a través de llamadas a la PokéAPI son los que se enumeran a continuación: categoría del Pokémon (si es inicial, bebé, fósil, legendario, singular o normal), altura, peso, color, género, ciclos para eclosionar huevos, ratio de captura, felicidad base, ratio de crecimiento y experiencia acumulada en el nivel 100.
 </details>
 
