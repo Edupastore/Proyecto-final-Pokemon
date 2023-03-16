@@ -106,29 +106,34 @@ De aquí, hemos extraído información sobre los grupos huevo de cada Pokémon (
 <br>
 El enlace a la mencionada API es el siguiente: https://pokeapi.co/
 <br>
-En esta Web, hemos tratado de completar la información faltante sobre los Pokémon de Hisui y Paldea que mencionábamos en el epígrafe anterior.
+Esta herramienta, nos brinda muchísima información acerca del mundo Pokémon. Cabe comentar, que en algunos casos la información que intentábamos extraer no estaba completa y que sólo estaba disponible hasta una determinada generación. En algunos casos, hemos podido subsanar esta situación, pero en otros no descartando incorporar esa información a nuestro conjunto de datos.
 <br>
-Para ello, hemos vuelto a emplear Selenium y hemos extraído la información sobre los tipos de cada Pokémon. El resto de información faltante, la hemos calculado o la hemos rellenado de la forma más oportuna.
+Los datos extraídos a través de llamadas a la PokéAPI son los que se enumeran a continuación: categoría del Pokémon (si es inicial, bebé, fósil, legendario, singular o normal), altura, peso, color, género, ciclos para eclosionar huevos, ratio de captura, felicidad base, ratio de crecimiento y experiencia acumulada en el nivel 100.
 </details>
 
 <a name="transformación"/>
 
 ## 🧬 Transformación
 
-El proceso de transformación ha sido, sin duda, el más tedioso y largo. Para no extendernos mucho, dejaremos a continuación una serie de pinceladas, unas líneas generales, sobre lo que hemos hecho.
+El proceso de transformación ha sido uno de los pasos más densos de este proyecto. Para no extendernos mucho, indicaremos a continuación las líneas generales sobre las transformaciones que hemos ido implementando según íbamos recopilando información.
 <br>
-    - En primer lugar, hemos limpiado los datos del primer dataset, llevando a cabo la eliminación de registros con el mismo número de Pokémon (eran distintas versiones del mismo, no Pokémon completamente distintos), la homogeneización de los datos contenidos en cada columna, hemos cambiado el formato del número de la Pokédex (de 1, 2 , 3, etcétera hemos pasado a 0001, 0002, 0003, etcétera), hemos cambiando en "legendary" los booleanos True/False por "leg"/"notleg", en "type2" hemos rellenado con "Mono" los valores nulos (para indicar que son Pokémon monotipo) y, en definitiva, hemos comprobado de manera exhaustiva que todo concordase y tuviese coherencia.
+- Hemos limpiado los datos conforme los hemos ido obteniendo siguiendo una serie de pasos para ello. Hemos llevado a cabo la eliminación de registros que no nos hacían falta, hemos comprobado valores nulos y los hemos rellenado cuando ha sido oportuno y hemos comprobado que no hubiese registros duplicados.
 <br>
-    - En segundo lugar, hemos transformado también los datos obtenidos de los dos portales Web mencionados con anterioridad y los hemos "acondicionado" de tal manera que el producto final fuese una tabla de idénticas dimensiones, con idénticos nombres de columnas e idénticos tipos de datos que los del dataset anterior. Tras una serie de transformaciones, lo conseguimos.
+- También hemos tratado de homogeneizar los datos de algunas columnas para que todo tuviese un sentido, una coherencia y de cara a facilitar el análisis posterior de los datos.
 <br>
-    - En tercer lugar, hemos comprobado que los tipos de datos del primer dataset y del segundo fuesen iguales y hemos optimizado dichos tipos.
+- No hemos analizado si había datos atípicos, porque todos los datos de nuestro conjunto (Pokémon) tienen sentido para permanecer en el dataset. Tampoco hemos comprobado correlaciones ni colinealidad en este apartado porque no nos ha interesado; las columnas se han elegido con total discrecionalidad y sin importar si eran dependientes unas de otras.
 <br>
-    - Por último, hemos concatenado ambas tablas para conformar un registro único con datos sobre todos los Pokémon existentes a fecha de hoy (13/02/2023).
+- Hemos creado nuevas variables (columnas) que son combinación lineal de otras columnas o transformaciones de las mismas. También hemos eliminado columnas que no nos servían para el estudio y añadido otras.
+<br>
+- Además, hemos comprobado que los tipos de datos de nuestro primer dataset (generaciones I a VIII) y del segundo (generación IX) fuesen iguales y hemos optimizado dichos tipos para que ocupasen lo mínimo posible en memoria.
+<br>
+ - Para finalizar, hemos concatenado ambos conjuntos de datos para conformar un registro único con información relevante sobre todos los Pokémon existentes a fecha actual (16/03/2023) y para un posterior análisis estadístico que veremos en los próximos epígrafes.
 <br>
 
 <a name="carga"/>
 
-## 🧬 Carga en base de datos
+## 🔎 Objetivo
+
 El último paso ha sido la incorporación de esta tabla maestra a una base de datos en SQL. Para ello, hemos creado en Workbench el esquema de la base de datos (configurando la tabla de Pokémon, con sus columnas y los tipos de datos de cada una de ellas).
 <br>
 Una vez hecho esto, hemos volcado los datos de nuestra tabla maestra en la base de datos que hemos llamado "pokemon". Con esta acción, hemos dado por concluída la elaboración del proyecto.
@@ -139,7 +144,7 @@ Una vez hecho esto, hemos volcado los datos de nuestra tabla maestra en la base 
 
 <a name="objetivo"/>
 
-## 📊 Objetivo
+## 📊 Estudio
 El objetivo que nos hemos marcado con este proyecto ha sido configurar una base de datos completa sobre todos los Pokémon existentes, para que nos pueda servir como herramienta de consulta (por ejemplo, cuando estemos jugando a cualquiera de los juegos principales de la franquicia).
 <br>
 
