@@ -1,6 +1,6 @@
 # Proyecto-final-Pokemon
 
-![pokemaniac](https://github.com/Edupastore/Proyecto-final-Pokemon/blob/main/pokemaniac.jpg)
+![pokemaniac](https://github.com/Edupastore/Proyecto-final-Pokemon/blob/main/images/pokemaniac.jpg)
 
 ## ⛓️ Índice de contenidos
 
@@ -36,7 +36,7 @@ La motivación para la realización de este proyecto viene determinada por varia
 - Alcance: Pokémon es, a nivel mundial, la franquicia de medios más valiosa del mundo en términos de ingresos totales (según Statista, un portal alemán de estadística), por lo que la magnitud de este fenómeno invita a estudiarlo a fondo.
 <br>
 
-![pokevaluable](https://github.com/Edupastore/Proyecto-final-Pokemon/blob/main/pokevaluable.jpg)
+![pokevaluable](https://github.com/Edupastore/Proyecto-final-Pokemon/blob/main/images/pokevaluable.jpg)
 
 
 <a name="extracción"/>
