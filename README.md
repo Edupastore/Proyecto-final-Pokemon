@@ -10,7 +10,7 @@
 4.[🧬 Transformación](#transformación)\
 5.[🔎 Objetivo](#objetivo)
 6.[📊 Estudio](#estudio)
-7.[🤓 Conclusiones](#objetivo)
+7.[🤓 Conclusiones](#conclusiones)
 8.[👣 Siguientes pasos](#siguientespasos)
 
 ## ✍️ Descripción
@@ -106,16 +106,18 @@ De aquí, hemos extraído información sobre los grupos huevo de cada Pokémon (
 <br>
 El enlace a la mencionada API es el siguiente: https://pokeapi.co/
 <br>
-Esta herramienta, nos brinda muchísima información acerca del mundo Pokémon. Cabe comentar, que en algunos casos la información que intentábamos extraer no estaba completa y que sólo estaba disponible hasta una determinada generación. En algunos casos, hemos podido subsanar esta situación, pero en otros no descartando incorporar esa información a nuestro conjunto de datos.
+Esta herramienta, nos brinda muchísima información acerca del mundo Pokémon. Cabe comentar, que en algunos casos la información que intentábamos extraer no estaba completa y que sólo estaba disponible hasta una determinada generación. En algunos casos, hemos podido subsanar esta situación, pero en otros no, descartando incorporar esa información a nuestro conjunto de datos.
 <br>
 Los datos extraídos a través de llamadas a la PokéAPI son los que se enumeran a continuación: categoría del Pokémon (si es inicial, bebé, fósil, legendario, singular o normal), altura, peso, color, género, ciclos para eclosionar huevos, ratio de captura, felicidad base, ratio de crecimiento y experiencia acumulada en el nivel 100.
 </details>
+
+Toda esta parte de extracción y la posterior de transformación, las hemos llevado a cabo a través de la utilización de un Jupyter Notebook llamado "Pokemones.ipynb" (alojado en la carpeta src del repositorio).
 
 <a name="transformación"/>
 
 ## 🧬 Transformación
 
-El proceso de transformación ha sido uno de los pasos más densos de este proyecto. Para no extendernos mucho, indicaremos a continuación las líneas generales sobre las transformaciones que hemos ido implementando según íbamos recopilando información.
+El proceso de transformación ha sido uno de los pasos más densos de este proyecto. Para no extendernos mucho, indicaremos a continuación las líneas generales sobre las transformaciones que hemos ido implementando conforme íbamos recopilando la información:
 <br>
 - Hemos limpiado los datos conforme los hemos ido obteniendo siguiendo una serie de pasos para ello. Hemos llevado a cabo la eliminación de registros que no nos hacían falta, hemos comprobado valores nulos y los hemos rellenado cuando ha sido oportuno y hemos comprobado que no hubiese registros duplicados.
 <br>
@@ -127,26 +129,61 @@ El proceso de transformación ha sido uno de los pasos más densos de este proye
 <br>
 - Además, hemos comprobado que los tipos de datos de nuestro primer dataset (generaciones I a VIII) y del segundo (generación IX) fuesen iguales y hemos optimizado dichos tipos para que ocupasen lo mínimo posible en memoria.
 <br>
- - Para finalizar, hemos concatenado ambos conjuntos de datos para conformar un registro único con información relevante sobre todos los Pokémon existentes a fecha actual (16/03/2023) y para un posterior análisis estadístico que veremos en los próximos epígrafes.
+- Para finalizar, hemos concatenado ambos conjuntos de datos para conformar un registro único con información relevante sobre todos los Pokémon existentes a fecha actual (16/03/2023) y para un posterior análisis estadístico que veremos en los próximos epígrafes.
 <br>
-
-<a name="carga"/>
-
-## 🔎 Objetivo
-
-El último paso ha sido la incorporación de esta tabla maestra a una base de datos en SQL. Para ello, hemos creado en Workbench el esquema de la base de datos (configurando la tabla de Pokémon, con sus columnas y los tipos de datos de cada una de ellas).
-<br>
-Una vez hecho esto, hemos volcado los datos de nuestra tabla maestra en la base de datos que hemos llamado "pokemon". Con esta acción, hemos dado por concluída la elaboración del proyecto.
-<br>
-
-![eerd](https://github.com/Edupastore/w4-ETL-Project/blob/main/eerd.jpg)
-<br>
+Los datos resultantes se han exportado a un fichero con extensión csv bajo el nombre de "pokefinal.csv" (alojado en la carpeta data del repositorio).
 
 <a name="objetivo"/>
 
+## 🔎 Objetivo
+
+Una vez configurado el conjunto de datos a nuestra medida, hemos pasado a realizar un estudio con el objetivo de ver si existen diferencias significativas entre las distintas generaciones Pokémon y, de haberlas, tratar de encontrar los pares de generaciones entre los que las hay.
+<br>
+Este objetivo, ha sido posible llevarlo a cabo gracias a diversas técnicas estadísticas (fundamentalmente tests) que veremos con más profundidad en el siguiente apartado.
+<br>
+Por último, cabe comentar que hemos llevado a cabo este análisis sobre si existen diferencias significativas estudiando todas las variables de nuestro conjunto de datos (tanto las numéricas como las categóricas).
+
+<a name="estudio"/>
+
 ## 📊 Estudio
-El objetivo que nos hemos marcado con este proyecto ha sido configurar una base de datos completa sobre todos los Pokémon existentes, para que nos pueda servir como herramienta de consulta (por ejemplo, cuando estemos jugando a cualquiera de los juegos principales de la franquicia).
+
+Para llevar a cabo nuestro estudio, hemos utilizado dos herramientas principales, varias auxiliares que nos han ayudado a determinar cuál de las principales era más conveniente utilizar para cada variable y una prueba post hoc para ayudarnos a determinar en qué pares de muestras hay diferencias significativas.
+
+Las dos herramientas principales que hemos empleado son:
+
+- Test de ANOVA: se trata de una técnica estadística que se utiliza para comparar la media de tres o más grupos (generaciones en nuestro caso). En términos generales, se utiliza para determinar si hay diferencias significativas entre las medias de tres o más grupos. Para llevar a cabo ANOVA, se tienen que cumplir tres supuestos que son: normalidad, homocedasticidad e indepedencia de las muestras. Si no se cumplen estos supuestos, se procede con la otra técnica.
+
+- Prueba de Kruskal-Wallis: es un test no paramétrico menos potente que ANOVA, que se puede utilizar para comparar la mediana de tres o más grupos independientes, aunque las muestras no cumplan con los supuestos que se indicaron antes para llevar a cabo ANOVA.
+
+Las herramientas auxiliares para determinar si usar ANOVA o Kruskal-Wallis son estas:
+
+- Test de Shapiro: es una prueba estadística utilizada para determinar si un conjunto de datos sigue una distribución normal o no.
+
+- Test de Levenne: es una prueba que nos ayuda a determinar si existe homocedasticidad entre las muestras, es decir, que este test nos sirve para evaluar si las varianzas nuestros grupos son iguales o no.
+
+- Test de independencia de muestras y gráfico de dispersión: el test de independencia es una prueba estadística utilizada para verificar si las muestras de datos son independientes entre sí o no, mientras que el gráfico de dispersión es una herramienta visual de apoyo para ver si existen o no patrones que determinen si hay relaciones de dependencia o no entre las muestras.
+
+La prueba post-hoc que hemos utilizado es la siguiente:
+
+- Prueba de Tukey: es una prueba post-hoc que se utiliza después de realizar una prueba de comparación de múltiples grupos, para determinar cuáles de las muestras tienen diferencias significativas entre sí. La prueba de Tukey se utiliza para comparar todas las posibles combinaciones de pares de grupos. Es una prueba conservadora, lo que significa que es menos propensa a cometer errores de tipo I (rechazar la hipótesis nula cuando es verdadera) que otras pruebas, por ello nos decantamos por el empleo de este test.
+
+El procedimiento que hemos llevado a cabo para el estudio de cada variable entre las distintas generaciones Pokémon para ver si existían diferencias significativas ha sido el siguiente:
+
+
+
+Todo lo que hemos ido analizando en este estudio, se ha llevado a cabo en un Jupyter Notebook llamado "Estudio.ipynb" (alojado en la carpeta src del repositorio).
+
+<a name="conclusiones"/>
+
+## 🤓 Conclusiones
+
+
 <br>
 
-![sqlpoke](https://github.com/Edupastore/w4-ETL-Project/blob/main/sqlpoke.jpg)
+
+<a name="siguientespasos"/>
+
+## 👣 Siguientes pasos
+
+
 <br>
