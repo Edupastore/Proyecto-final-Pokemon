@@ -10,7 +10,7 @@
 4.[🧬 Transformación](#transformación)\
 5.[🔎 Objetivo](#objetivo)\
 6.[📊 Estudio](#estudio)\
-7.[🤓 Conclusiones](#conclusiones)\
+7.[🤓 Resultados y conclusiones](#resultadosyconclusiones)\
 8.[👣 Siguientes pasos](#siguientespasos)
 
 ## ✍️ Descripción
@@ -183,15 +183,15 @@ El procedimiento que hemos llevado a cabo para el estudio de cada variable entre
 
 Todo lo que hemos ido analizando en este estudio, se ha llevado a cabo en un Jupyter Notebook llamado "Estudio.ipynb" (alojado en la carpeta src del repositorio).
 
-<a name="conclusiones"/>
+<a name="resultadosyconclusiones"/>
 
-## 🤓 Conclusiones
+## 🤓 Resultados y conclusiones
 
-Las conclusiones a las que hemos llegado tras la realización de este estudio estadístico son:
+Los resultados y conclusiones a los que hemos llegado tras la realización de este estudio estadístico son:
 
 - Por un lado, que las variables numéricas correspondientes a las estadísticas de los Pokémon, al rol competitivo potencial de cada Pokémon (ANOVA) y a los datos de altura y peso (Kruskal-Wallis) siguen una distribución similar entre generaciones, ya que no podemos rechazar la hipótesis nula de que las muestras tienen la misma media/mediana poblacional. Podemos decir en este sentido, por ejemplo, que no se han potenciado ni "nerfeado" en términos medios las estadísticas de los Pokémon con el paso de las generaciones.
 
-- Para las variables categóricas category y color (Kruskal-Wallis), tampoco podemos rechazar la hipótesis nula de que las muestras tienen la misma mediana poblacional, por lo que podemos intuir que las proporciones de tipos de Pokémon en cuanto a si son normales, legendarios, fósiles, etcétera, entre generaciones, responden a cierta similitud.
+- Para las variables categóricas category y color (Kruskal-Wallis), tampoco podemos rechazar la hipótesis nula de que las muestras tienen la misma mediana poblacional, por lo que podemos intuir, por ejemplo, que las proporciones de tipos de Pokémon en cuanto a si son normales, legendarios, fósiles, etcétera, entre generaciones, responden a cierta similitud.
 
 - Por otro lado, las variables numéricas hatch, capt_rate, base_happ y base_exp, y las variables categóricas growth_rate, type1, type2, gender, egg_gr1 y egg_gr22 (Kruskal-Wallis) nos muestran que existen diferencias significativas entre diferentes pares de generaciones. Habría que hacer un estudio más a fondo para ver a qué se deben estas diferencias.
 
